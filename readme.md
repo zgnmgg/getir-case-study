@@ -1,7 +1,21 @@
 # getir-case-study
 REST API for Getir Case Study
 
-This API with a single endpoint (record) fetches the data MongoDB and return the results.
+This API with a single endpoint (record) fetches the data MongoDB and return the results. The application use;
+- Node
+- Express
+- Jest
+- Mongoose
+- Heroku
+- Swagger
+
+## Requirements
+
+For building and running the application you need:
+
+- [npm]
+- Environment Variables =>
+    -  MONGODB_URL (MongoDB Url)
 
 ## Build project
 ```

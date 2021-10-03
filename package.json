@@ -1,6 +1,7 @@
 {
   "name": "getir-case-study",
   "version": "1.0.0",
+  "description": "Getir Case Study",
   "main": "app.js",
   "scripts": {
     "dev": "node src/app.js",
@@ -12,7 +13,7 @@
       "/node_modules/"
     ]
   },
-  "keywords": [],
+  "keywords": [ "Getir" ],
   "author": "Özgün Gökşenli",
   "license": "ISC",
   "devDependencies": {
