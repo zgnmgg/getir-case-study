@@ -9,23 +9,23 @@ const fetchData = async (req, res) => {
     const { startDate, endDate, minCount, maxCount } = req.body;
 
     try {
-        const records = await getRecords(startDate, endDate, minCount, maxCount);
-        const arrayRecords = records.map(record => {
+        const recordDatas = await getRecords(startDate, endDate, minCount, maxCount);
+        const recordMapper = recordDatas.map(rd => {
             return {
-                "key": record.key,
-                "createdAt": record.createdAt.toISOString(),
-                "totalCount": record.totalCount
+                "key": rd.key,
+                "createdAt": rd.createdAt.toISOString(),
+                "totalCount": rd.totalCount
             }
         })
 
         res.status(200).json({
             code: 0,
             msg: 'Success',
-            records: arrayRecords
+            records: recordMapper
         });
     } catch (error) {
         res.status(500).json({
-            code: 105,
+            code: 500,
             message: error.message
         });
     }

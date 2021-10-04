@@ -2,7 +2,6 @@ module.exports = {
     post:{
         tags: ['Record operation'],
         description: "Fetch all records by parameters",
-        operationId: "deleteTodo",
         parameters:[],
         requestBody: {
             content:{
@@ -15,10 +14,10 @@ module.exports = {
         },
         responses:{
             '200':{
-                description: "Todo created successfully"
+                description: "Fetch Records successfully"
             },
             '500':{
-                message: ""
+                description: "Errors throw"
             }
         }
     }

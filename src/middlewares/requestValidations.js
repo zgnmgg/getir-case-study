@@ -13,6 +13,7 @@ const recordValidation = (req, res, next) => {
             message: 'Missing parameters: startDate, endDate, minCount or maxCount.',
             code: 100
         });
+        return;
     }
 
     if(typeof minCount != "number" || typeof maxCount != "number"){
@@ -20,6 +21,7 @@ const recordValidation = (req, res, next) => {
             message: 'Parameter not valid: minCount, maxCount.',
             code: 101
         });
+        return;
     }
 
     if(minCount > maxCount) {
@@ -27,6 +29,7 @@ const recordValidation = (req, res, next) => {
             message: 'MinCount must be smaller than maxCount',
             code: 102
         });
+        return;
     }
 
     if(!moment(startDate, "YYYY-MM-DD", true).isValid() || !moment(endDate, "YYYY-MM-DD", true).isValid()){
@@ -35,6 +38,7 @@ const recordValidation = (req, res, next) => {
             message: 'Date format is not valid.(YYYY-MM-DD)',
             code: 103
         });
+        return;
     }
 
     if((moment(startDate, "YYYY-MM-DD", true).valueOf() > (moment(endDate, "YYYY-MM-DD", true).valueOf()))) {
@@ -43,6 +47,7 @@ const recordValidation = (req, res, next) => {
             message: 'StartDate must be smaller than endDate',
             code: 104
         });
+        return;
     }
     else next();
 }
